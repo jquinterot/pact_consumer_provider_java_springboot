@@ -1,0 +1,69 @@
+{
+  "consumer": {
+    "name": "ZooAnimals"
+  },
+  "interactions": [
+    {
+      "description": "getting all zoo animals",
+      "key": "ac7877b7",
+      "pending": false,
+      "providerStates": [
+        {
+          "name": "Zoo Animals exists"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/api/zooAnimals"
+      },
+      "response": {
+        "body": {
+          "content": {
+            "animal": "gorilla",
+            "color": "black",
+            "id": "1",
+            "name": "Chita",
+            "zoo": {
+              "city": "Pereira",
+              "name": "Ukumari"
+            }
+          },
+          "contentType": "application/json; charset=UTF-8",
+          "encoded": false
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json; charset=UTF-8"
+          ]
+        },
+        "matchingRules": {
+          "header": {
+            "Content-Type": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      },
+      "transport": "https",
+      "type": "Synchronous/HTTP"
+    }
+  ],
+  "metadata": {
+    "pact-jvm": {
+      "version": "4.5.3"
+    },
+    "pactSpecification": {
+      "version": "4.0"
+    }
+  },
+  "provider": {
+    "name": "Animals"
+  }
+}
